@@ -13,12 +13,6 @@
     <meta property="og:description" content="Passionate about Scouting, Design, and Digital Creativity.">
     <meta property="og:image" content="https://i.postimg.cc/KY7QKvLN/Messenger-creation-73E0A137-A629-4FAB-88DE-FB30518AB4DA.jpg">
 
-    <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://ttasin2x-droid.github.io/Tanvir-Tasin-Portfolio-/">
-    <meta property="twitter:title" content="Tanvir Tasin - Portfolio">
-    <meta property="twitter:description" content="Passionate about Scouting, Design, and Digital Creativity.">
-    <meta property="twitter:image" content="https://i.postimg.cc/KY7QKvLN/Messenger-creation-73E0A137-A629-4FAB-88DE-FB30518AB4DA.jpg">
-
     <link rel="icon" type="image/png" href="https://i.postimg.cc/y8QscjyN/20260111-033841.png">
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -40,7 +34,7 @@
                     <a href="#my-works" class="btn-main">Explore Works <i class="fas fa-arrow-down"></i></a>
                 </div>
                 <div class="hero-image-side" data-aos="fade-left" data-aos-duration="1000">
-                    <img id="dynamicHeroImg" src="https://i.postimg.cc/KY7QKvLN/Messenger-creation-73E0A137-A629-4FAB-88DE-FB30518AB4DA.jpg" alt="Tanvir Tasin">
+                    <img id="dynamicHeroImg" src="https://i.postimg.cc/KY7QKvLN/Messenger-creation-73E0A137-A629-4FAB-88DE-FB30518AB4DA.jpg" alt="Tanvir Tasin" loading="eager">
                     
                     <div class="scout-floating-card" onclick="openModal('scoutModal')" data-aos="zoom-in" data-aos-delay="500">
                         <div class="scout-thumbs">
@@ -64,7 +58,16 @@
                 <h2>My Works for Bangladesh Scouts</h2>
                 <p>A collection of my graphic design and scouting memories</p>
             </div>
-            <div class="gallery-grid" id="galleryGrid"></div>
+            
+            <div class="gallery-grid" id="galleryGrid">
+                <div class="skeleton-card"></div>
+                <div class="skeleton-card"></div>
+                <div class="skeleton-card"></div>
+                <div class="skeleton-card"></div>
+                <div class="skeleton-card"></div>
+                <div class="skeleton-card"></div>
+            </div>
+
             <div class="load-more-container">
                 <button id="view-more-btn" onclick="loadMoreImages()" class="btn-outline" data-aos="fade-up">View More <i class="fas fa-arrow-down"></i></button>
                 <button id="view-less-btn" onclick="viewLessImages()" class="btn-outline" style="display: none;" data-aos="fade-up">View Less <i class="fas fa-arrow-up"></i></button>
@@ -94,15 +97,12 @@
 
             <div class="load-more-container" style="margin-top: 40px;">
                 <button class="btn-camera" onclick="triggerCameraAnim(this)" data-aos="fade-up">
-                    
                     <div class="cam-fold-cut"></div>
                     <div class="cam-fold-flap"></div>
-
                     <div class="cam-particles">
                         <div class="c-dot"></div><div class="c-dot"></div>
                         <div class="c-dot"></div><div class="c-dot"></div>
                     </div>
-
                     <span class="cam-label default">View Gallery</span>
                     <span class="cam-label success">
                         Opening...
@@ -111,7 +111,6 @@
                             <polyline points="12 5 19 12 12 19"></polyline>
                         </svg>
                     </span>
-
                     <div class="camera-group">
                         <div class="cam-top"></div>
                         <div class="cam-body">
@@ -119,18 +118,17 @@
                         </div>
                         <div class="cam-lens"></div>
                     </div>
-
                     <div class="flash-overlay"></div>
-
                 </button>
             </div>
         </div>
     </section>
+    
     <section class="section-padding">
         <div class="container">
             <div class="promo-card" data-aos="flip-up" data-aos-duration="1200">
                 <div class="promo-image">
-                    <img id="dynamicProfileImg" src="https://i.postimg.cc/qRY5L4c1/Copy-of-bd-20260110-020452-0000.jpg" alt="Tanvir Tasin Profile">
+                    <img id="dynamicProfileImg" src="https://i.postimg.cc/qRY5L4c1/Copy-of-bd-20260110-020452-0000.jpg" alt="Tanvir Tasin Profile" loading="lazy">
                 </div>
                 <div class="promo-content">
                     <h2 id="aboutTitle">I'm Tanvir Tasin</h2>
