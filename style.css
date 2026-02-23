@@ -227,7 +227,7 @@ body { background-color: var(--bg-color); color: var(--text-dark); position: rel
 
 /* --- RESPONSIVE OPTIMIZATION (MOBILE SPEED FIX) --- */
 @media (max-width: 900px) {
-    .hero-text h1 { font-size: 3rem; animation: none; -webkit-text-fill-color: var(--primary-color); }
+    .hero-text h1 { font-size: 3rem; }
     .hero-card-main { height: auto; flex-direction: column-reverse; padding-bottom: 0; }
     .hero-image-side { width: 100%; height: 350px; }
     .hero-text { width: 100%; padding: 40px 30px; text-align: center; }
