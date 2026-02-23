@@ -62,7 +62,6 @@ if(galleryGrid) {
     onValue(ref(db, 'home_works'), (snap) => { 
         const data = snap.val(); 
         
-        // ডেটা পেলে Skeleton সরিয়ে ফেলা হবে, না পেলে মেসেজ দেখাবে
         galleryGrid.innerHTML = ""; 
         
         if(data) { 
@@ -70,7 +69,6 @@ if(galleryGrid) {
             images.forEach((item, index) => { 
                 const div = document.createElement('div'); 
                 div.className = "gallery-item"; 
-                // অ্যানিমেশন একটু ফাস্ট করার জন্য ডিলে কমানো হলো
                 div.setAttribute('data-aos', 'fade-up'); 
                 div.setAttribute('data-aos-delay', (index % 4) * 50); 
                 div.setAttribute('onclick', `window.openLightboxFromURL('${item.url}')`); 
@@ -124,18 +122,24 @@ window.goToPage = (url) => { document.getElementById('pageTransition').classList
 window.closeLightbox = (event) => { if (event.target.id === 'lightbox' || event.target.tagName === 'I') { document.getElementById('lightbox').classList.remove('active'); document.body.style.overflow = 'auto'; } }
 window.scrollToTop = () => { window.scrollTo({top: 0, behavior: 'smooth'}); }
 
-// --- FAST PRELOADER FIX (Reduced Timeout) ---
-window.onload = function() { 
+// --- FAST PRELOADER FIX ---
+function removePreloader() { 
     createSoftSnowfall(); 
     if(typeof AOS !== 'undefined') AOS.init({ duration: 800, once: true }); 
 
     const loader = document.getElementById('site-preloader');
     if(loader) { 
         loader.style.opacity = '0'; 
-        // Changed from 600ms to 200ms for faster interaction
         setTimeout(() => loader.remove(), 200); 
     }
-};
+}
+
+if (document.readyState === 'complete') {
+    removePreloader();
+} else {
+    window.addEventListener('load', removePreloader);
+}
+setTimeout(removePreloader, 3000); // 3 second fallback force-remove
 
 window.onscroll = function() { const btn = document.getElementById("backToTop"); if(btn) btn.style.display = (window.scrollY > 300) ? "flex" : "none"; };
 function createSoftSnowfall() { const container = document.getElementById('weather-container'); if(!container) return; for (let i = 0; i < 35; i++) { const flake = document.createElement('div'); flake.classList.add('snowflake'); flake.innerHTML = '❄'; flake.style.left = Math.random() * 100 + 'vw'; flake.style.animationDuration = `${Math.random() * 10 + 5}s, ${Math.random() * 4 + 3}s`; flake.style.animationDelay = Math.random() * 5 + 's'; container.appendChild(flake); } setTimeout(() => { container.style.opacity = '0'; }, 6000); }
